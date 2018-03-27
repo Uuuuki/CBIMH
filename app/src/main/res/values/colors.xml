@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#338DC26F</color>
+    <color name="editTextPreview">#EE000000</color>
+    <color name="toolbar">#8DC26F</color>
+    <color name="user">#5599CC99</color>
+</resources>

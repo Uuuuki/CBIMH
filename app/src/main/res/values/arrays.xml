@@ -1,0 +1,23 @@
+<resources>
+
+    <string-array name="sex">
+        <item>我是孩子的爸爸</item>
+        <item>我是孩子的妈妈</item>
+    </string-array>
+
+    <string-array name="school">
+        <item>武汉理工幼儿园</item>
+        <item>华中师范幼儿园</item>
+        <item>武汉大学附属幼儿园</item>
+        <item>华中农业幼儿园</item>
+        <item>光谷人民幼儿园</item>
+        <item>街道口职业技术幼儿园</item>
+        <item>湖北工业幼儿园</item>
+        <item>武汉纺织幼儿园</item>
+        <item>华中科技幼儿园</item>
+        <item>武汉地质幼儿园</item>
+        <item>东湖科技幼儿园</item>
+        <item>水果湖幼儿园</item>
+    </string-array>
+    
+</resources>
