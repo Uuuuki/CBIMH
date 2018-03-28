@@ -36,8 +36,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private Toolbar toolbar;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
-    private String[] lvs = {"List Item 01", "List Item 02", "List Item 03", "List Item 04"};
-    private ArrayAdapter arrayAdapter;
 
     private ImageButton mVideo;
     private ImageButton mPhoto;
@@ -108,7 +106,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         mDrawerToggle.syncState();
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         //设置菜单列表
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lvs);
 
         mVideo = findViewById(R.id.video);
         mPhoto = findViewById(R.id.photo);
