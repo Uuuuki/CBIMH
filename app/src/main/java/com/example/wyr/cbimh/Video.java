@@ -1,7 +1,9 @@
 package com.example.wyr.cbimh;
 
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 /**
  * Created by wyr on 2018/3/27.
@@ -17,6 +21,8 @@ import android.view.View;
 public class Video extends AppCompatActivity {
 
     private Toolbar toolbar;
+
+    private VideoView videoView;
 
 
 
@@ -33,6 +39,18 @@ public class Video extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "01.flv";
+
+        videoView = findViewById(R.id.videoView);
+
+        //videoView.setVideoPath(path);
+
+        videoView.setVideoURI(Uri.parse("http://download.yxybb.com/bbvideo/web/d1/d13/d11/d1/f11-web.mp4"));
+
+        MediaController controller = new MediaController(this);
+        videoView.setMediaController(controller);
+        controller.setMediaPlayer(videoView);
 
     }
 
