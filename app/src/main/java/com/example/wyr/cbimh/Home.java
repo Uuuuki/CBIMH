@@ -46,16 +46,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private ImageButton mLesson;
     private ImageButton mFriendMessage;
 
-    private static final String TAG = "HOME";
-
-    static {
-        if(!OpenCVLoader.initDebug()){
-            Log.d(TAG,"opencv not loaded");
-        }else{
-            Log.d(TAG,"Hello opencv4Android");
-        }
-    }
-
 
 
 
