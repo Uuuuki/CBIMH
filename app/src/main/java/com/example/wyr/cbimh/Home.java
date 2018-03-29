@@ -16,6 +16,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +25,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
+
+import org.opencv.android.OpenCVLoader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +45,16 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     private ImageButton mPhoto;
     private ImageButton mLesson;
     private ImageButton mFriendMessage;
+
+    private static final String TAG = "HOME";
+
+    static {
+        if(!OpenCVLoader.initDebug()){
+            Log.d(TAG,"opencv not loaded");
+        }else{
+            Log.d(TAG,"Hello opencv4Android");
+        }
+    }
 
 
 

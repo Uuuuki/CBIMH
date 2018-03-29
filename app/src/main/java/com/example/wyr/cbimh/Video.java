@@ -42,7 +42,7 @@ public class Video extends AppCompatActivity {
 
         //videoView.setVideoPath(path);
 
-        videoView.setVideoURI(Uri.parse("http://172.16.239.180:8080/video/a.mp4"));
+        videoView.setVideoURI(Uri.parse("http://218.197.116.221/120.79.73.18/video/b.mp4"));
 
         MediaController controller = new MediaController(this);
         videoView.setMediaController(controller);
