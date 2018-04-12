@@ -70,16 +70,13 @@ public class Video extends AppCompatActivity{
             switch(msg.what){
                 case UPDATE:
                     imageView.setImageBitmap(resultImg);
-                    Log.d(TAG,"123456111111");
+                    Log.d(TAG,"Set image successfully");
                     break;
                 default:
                     break;
             }
         }
     };
-
-
-
     private static final String TAG = "Videoprint";
 
     static {
@@ -89,9 +86,6 @@ public class Video extends AppCompatActivity{
             Log.d(TAG,"Hello opencv4Android");
         }
     }
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -132,12 +126,9 @@ public class Video extends AppCompatActivity{
                     int position = videoView.getCurrentPosition();
                     Log.v(TAG,""+position);
 
-                    bitmap = media.getFrameAtTime(TimeUnit.MICROSECONDS.convert(position, TimeUnit.MILLISECONDS),
-                            media.OPTION_CLOSEST_SYNC);
+                    bitmap = media.getFrameAtTime(TimeUnit.MICROSECONDS.convert(position, TimeUnit.MILLISECONDS));
 
-                    //saveBitmap(bitmap);
-
-
+//                    saveBitmap(bitmap);
                     int w = bitmap.getWidth();
                     int h = bitmap.getHeight();
                     int[] pixels = new int[w * h];
@@ -146,23 +137,17 @@ public class Video extends AppCompatActivity{
                     resultImg = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
                     resultImg.setPixels(resultInt, 0, w, 0, 0, w, h);
 //                    imageView.setImageBitmap(resultImg);
-
-
-
                     Message message = new Message();
                     message.what = UPDATE;
                     handler.sendMessage(message);
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             }}) {
         }.start();
-
-
-
     }
 
 
