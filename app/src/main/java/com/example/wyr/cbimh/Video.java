@@ -60,7 +60,6 @@ public class Video extends AppCompatActivity{
     private ImageView imageView;
 
     private VideoCapture vc;
-    private Mat frame;
 
     public static final int UPDATE = 1;
 
@@ -126,7 +125,8 @@ public class Video extends AppCompatActivity{
                     int position = videoView.getCurrentPosition();
                     Log.v(TAG,""+position);
 
-                    bitmap = media.getFrameAtTime(TimeUnit.MICROSECONDS.convert(position, TimeUnit.MILLISECONDS));
+                    bitmap = media.getFrameAtTime(TimeUnit.MICROSECONDS.convert(position, TimeUnit.MILLISECONDS),media.OPTION_CLOSEST);
+                    Log.d(TAG,"bitmap done");
 
 //                    saveBitmap(bitmap);
                     int w = bitmap.getWidth();
@@ -141,7 +141,7 @@ public class Video extends AppCompatActivity{
                     message.what = UPDATE;
                     handler.sendMessage(message);
 //                    try {
-//                        Thread.sleep(1000);
+//                        Thread.sleep(5000);
 //                    } catch (InterruptedException e) {
 //                        e.printStackTrace();
 //                    }
