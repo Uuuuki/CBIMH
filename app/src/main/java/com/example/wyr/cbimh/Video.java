@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.MediaMetadataRetriever;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -61,6 +62,8 @@ public class Video extends AppCompatActivity{
 
     private VideoCapture vc;
 
+    private boolean run;
+
     public static final int UPDATE = 1;
 
     @SuppressLint("HandlerLeak")
@@ -117,11 +120,19 @@ public class Video extends AppCompatActivity{
 
         imageView = findViewById(R.id.shot);
 
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                run = false;
+            }
+        });
+
         new Thread(new Runnable() {
 
             @Override
             public void run() {
-                while(true){
+                run = true;
+                while(run){
                     int position = videoView.getCurrentPosition();
                     Log.v(TAG,""+position);
 
@@ -168,6 +179,13 @@ public class Video extends AppCompatActivity{
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        run = false;
+
     }
 
     public void saveBitmap(Bitmap bm) {
