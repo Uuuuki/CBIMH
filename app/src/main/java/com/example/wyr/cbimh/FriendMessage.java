@@ -22,7 +22,7 @@ public class FriendMessage extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_message);
 
-        toolbar.setTitle("宝贝留言");//设置Toolbar标题
+        toolbar.setTitle("宝贝信箱");//设置Toolbar标题
         toolbar.setTitleTextColor(Color.parseColor("#ffffff")); //设置标题颜色
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用

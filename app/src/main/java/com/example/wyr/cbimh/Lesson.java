@@ -7,6 +7,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by wyr on 2018/3/27.
  */
@@ -14,6 +17,8 @@ import android.view.MenuItem;
 public class Lesson extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private CourseTableView courseTableView;
+
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -21,11 +26,29 @@ public class Lesson extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_lesson);
 
-        toolbar.setTitle("课程表");//设置Toolbar标题
+        toolbar.setTitle("宝贝课表");//设置Toolbar标题
         toolbar.setTitleTextColor(Color.parseColor("#ffffff")); //设置标题颜色
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        courseTableView = (CourseTableView) findViewById(R.id.ctv);
+        List<Course> list = new ArrayList<>();
+        Course c1 = new Course();
+        c1.setDay(1);
+        c1.setDes("数学");
+        c1.setJieci(1);
+        c1.setClassRoomName("小2班");
+        list.add(c1);
+
+        Course c2 = new Course();
+        c2.setDay(2);
+        c2.setDes("语文");
+        c2.setJieci(6);
+        list.add(c2);
+
+        courseTableView.updateCourseViews(list);
     }
 
     @Override
