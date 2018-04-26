@@ -7,12 +7,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * Created by wyr on 2018/3/27.
  */
 
 public class FriendMessage extends AppCompatActivity{
+
+    private String[] data = {"小王","小刘","小张","小李","小明","小红","小黑","小白","李老师","王老师","张老师","刘老师","赵老师"};
 
     private Toolbar toolbar;
     @Override
@@ -22,11 +26,15 @@ public class FriendMessage extends AppCompatActivity{
 
         toolbar = (Toolbar) findViewById(R.id.toolbar_message);
 
-        toolbar.setTitle("宝贝信箱");//设置Toolbar标题
+        toolbar.setTitle("联系人");//设置Toolbar标题
         toolbar.setTitleTextColor(Color.parseColor("#ffffff")); //设置标题颜色
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true); //设置返回键可用
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(FriendMessage.this,android.R.layout.simple_list_item_1,data);
+        ListView listView = findViewById(R.id.list);
+        listView.setAdapter(adapter);
     }
 
     @Override
