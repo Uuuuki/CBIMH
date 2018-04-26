@@ -3,9 +3,9 @@
     package="com.example.wyr.cbimh">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -24,47 +24,33 @@
         <activity
             android:name=".Login"
             android:label="@string/login"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".SignUp"
             android:label="@string/signup"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".SignUp2"
             android:label="@string/signup"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".Home"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
-
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".Video"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".Photo"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".Lesson"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
         <activity
             android:name=".FriendMessage"
-            android:theme="@style/AppThemeLight">
-
-        </activity>
+            android:theme="@style/AppThemeLight"></activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
     </application>
 
 </manifest>

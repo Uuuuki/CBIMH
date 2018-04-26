@@ -8,11 +8,16 @@
     <android.support.v7.widget.CardView
         android:id="@+id/photo_cv"
         android:layout_width="match_parent"
-        android:layout_height="128dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="3dp"
         app:cardElevation="4dp"
         app:cardMaxElevation="4dp"
         app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,9 +34,9 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
                 android:textSize="22dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/parent_message"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -40,14 +45,27 @@
                 android:id="@+id/parent_message"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/parent_name" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
-                android:textSize="18dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title_inform" />
+                app:layout_constraintTop_toBottomOf="@+id/parent_message"
+                app:srcCompat="@drawable/logo" />
 
         </android.support.constraint.ConstraintLayout>
 

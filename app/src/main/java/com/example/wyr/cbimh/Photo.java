@@ -70,30 +70,27 @@ public class Photo extends AppCompatActivity {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
-                inform.add(new Inform("abc","abc"));
-                adapter.notifyDataSetChanged();
-
-                swipeRefreshLayout.setRefreshing(false);
-
-                handler.postDelayed(new Runnable() {
+                new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        inform.add(new Inform("abc","abcd"));
+                        Toast.makeText(Photo.this,"刷新成功",Toast.LENGTH_LONG).show();
+                        swipeRefreshLayout.setRefreshing(false);
                     }
-                },2000);
+                },3000);
+
             }
+
         });
 
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                inform.add(new Inform("abc","abc"));
-                inform.add(new Inform("abc","abc"));
-                adapter = new PhotoRVAdapter(inform);
-                recyclerView.setAdapter(adapter);
-                Log.d("test111", "StateChanged = " + newState);
+//                inform.add(new Inform("abc","abc"));
+//                inform.add(new Inform("abc","abc"));
+//                adapter = new PhotoRVAdapter(inform);
+//                recyclerView.setAdapter(adapter);
+//                Log.d("test111", "StateChanged = " + newState);
 
 
             }
@@ -101,34 +98,34 @@ public class Photo extends AppCompatActivity {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-
-                Log.d("test112", "onScrolled");
-
-
-                int lastVisibleItemPosition = llm.findLastVisibleItemPosition();
-                if (lastVisibleItemPosition + 1 == adapter.getItemCount()) {
-                    Log.d("test", "loading executed");
-
-                    boolean isRefreshing = swipeRefreshLayout.isRefreshing();
-                    if (isRefreshing) {
-                        adapter.notifyItemRemoved(adapter.getItemCount());
-                        return;
-                    }
-                    if (!isLoading) {
-                        isLoading = true;
-                        handler.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                inform.add(new Inform("abc","abc"));
-                                adapter.notifyDataSetChanged();
-                                swipeRefreshLayout.setRefreshing(false);
-                                adapter.notifyItemRemoved(adapter.getItemCount());
-                                Log.d("test", "load more completed");
-                                isLoading = false;
-                            }
-                        }, 1000);
-                    }
-                }
+//
+//                Log.d("test112", "onScrolled");
+//
+//
+//                int lastVisibleItemPosition = llm.findLastVisibleItemPosition();
+//                if (lastVisibleItemPosition + 1 == adapter.getItemCount()) {
+//                    Log.d("test", "loading executed");
+//
+//                    boolean isRefreshing = swipeRefreshLayout.isRefreshing();
+//                    if (isRefreshing) {
+//                        adapter.notifyItemRemoved(adapter.getItemCount());
+//                        return;
+//                    }
+//                    if (!isLoading) {
+//                        isLoading = true;
+//                        handler.postDelayed(new Runnable() {
+//                            @Override
+//                            public void run() {
+//                                inform.add(new Inform("abc","abc"));
+//                                adapter.notifyDataSetChanged();
+//                                swipeRefreshLayout.setRefreshing(false);
+//                                adapter.notifyItemRemoved(adapter.getItemCount());
+//                                Log.d("test", "load more completed");
+//                                isLoading = false;
+//                            }
+//                        }, 1000);
+//                    }
+//                }
             }
         });
 
@@ -170,5 +167,8 @@ public class Photo extends AppCompatActivity {
     private void init(){
         inform = new ArrayList<>();
         inform.add(new Inform("刘妈妈","我家宝贝今天考试第一名啦！！！"));
+        inform.add(new Inform("刘妈妈","我家宝贝今天考试第一名啦！！！"));
+
+
     }
 }
